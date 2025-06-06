@@ -43,7 +43,7 @@ int main(void)
     PspOpenPSID PSID;
     sceOpenPSIDGetOpenPSID(&PSID);
 
-    pspDebugScreenPrintf("Your PSP's PSID is", PSID);
+    pspDebugScreenPrintf("Your PSP's PSID is %X", PSID);
 
     SceUID pFile = sceIoOpen("ms0:/PSID.txt", PSP_O_WRONLY | PSP_O_CREAT, 0777);
     if (pFile != NULL)
@@ -54,7 +54,7 @@ int main(void)
         sceIoClose(pFile);
     }
 
-    pspDebugScreenPrintf("\nAnd it have been saved to the file PSID.txt");
+    pspDebugScreenPrintf("\nAnd it has been saved in the file PSID.txt");
 
     sceKernelSleepThreadCB();
     return 0;
