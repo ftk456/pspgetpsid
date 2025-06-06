@@ -39,7 +39,7 @@ int main()
     SetupCallback();
 
     PspOpenPSID PSID;
-    sceOpenPSIDGetOpenPSID(&PSID);
+    //sceOpenPSIDGetOpenPSID(&PSID); gives unidefed reference error while compiling
     pspDebugScreenPrintf("The PSID of your PSP is", PSID);
 
     SceUID pFile = sceIoOpen("ms0:", PSP_O_WRONLY | PSP_O_CREAT, 0777);
